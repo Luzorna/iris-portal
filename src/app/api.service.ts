@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Observable} from 'rxjs';
 import {TestRequest} from './test-request';
 
 @Injectable({
@@ -11,11 +12,11 @@ export class ApiService {
 
   constructor(private httpClient:HttpClient) { }
 
-  public getTest(testGet:TestRequest){
+  public getTest(testGet:TestRequest): Observable<any>{
     return this.httpClient.post(`${this.apiUrl}/testGet/`,testGet);
   }
 
-  public getCheck(){
+  public getCheck():Observable<any>{
     return this.httpClient.get(`${this.apiUrl}/getCheck`);
   }
 

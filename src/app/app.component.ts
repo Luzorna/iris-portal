@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './api.service';
+import { TestRequest } from './test-request';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +19,9 @@ export class AppComponent {
     var test = {
       "name":"sathish"
     }
-    this.apiService.getTest(test).subscribe((res)=>{
-      console.log(res.toString);
+
+    this.apiService.getTest(test).subscribe((res:TestRequest)=>{
+      console.log(res);
     });
     this.apiService.getCheck().subscribe((res:string)=>{
       console.log(res);
