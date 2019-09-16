@@ -20,6 +20,9 @@ export class AppComponent {
     }
     this.apiService.getTest(test).subscribe((res)=>{
       console.log(res.toString);
-    })
+    });
+    this.apiService.getCheck().subscribe((res:string)=>{
+      console.log(res);
+    });
   }
 }

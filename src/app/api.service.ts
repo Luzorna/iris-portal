@@ -15,4 +15,8 @@ export class ApiService {
     return this.httpClient.post(`${this.apiUrl}/testGet/`,testGet);
   }
 
+  public getCheck(){
+    return this.httpClient.get(`${this.apiUrl}/getCheck`);
+  }
+
 }
