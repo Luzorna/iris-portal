@@ -20,11 +20,17 @@ export class AppComponent {
       "name":"sathish"
     }
 
-    this.apiService.getTest(test).subscribe((res:TestRequest)=>{
+    this.apiService.getTest(test).subscribe(
+      (res:string)=>{
       console.log(res);
-    });
-    this.apiService.getCheck().subscribe((res:string)=>{
+    },
+    (error:any)=> console.log(error)
+    );
+    this.apiService.getCheck().subscribe(
+      (res:string)=>{
       console.log(res);
-    });
+    },
+    (error:any)=> console.log(error)
+    );
   }
 }
